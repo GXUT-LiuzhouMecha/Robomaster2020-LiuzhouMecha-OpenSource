@@ -13,37 +13,27 @@
 通过变换矩阵进行透视变换将哨岗摄像头视角坐标转换为鸟瞰视角坐标，根据此坐标与场地大小关系得出敌方机器人在场地中的坐标。
 
 
-## 2.API
-   /*
-    *	@Brief: 变换矩阵初始化，手动取点
-    */
-	void PersctiveMatInit();
+### 2.API
+    
+##void PersctiveMatInit();
+@Brief: 变换矩阵初始化，手动取点
 
-   /*
-    *	@Brief: 图像灰度化，
-	*	@Input:	彩色图像
-    *			提取颜色
-    *			是否采用hsv空间模式
-	*	@Return: 灰度图像
-    */
-	cv::Mat DistillationColor(const cv::Mat &src_img, unsigned int color, bool using_hsv);
+##cv::Mat DistillationColor(const cv::Mat &src_img, unsigned int color, bool using_hsv);
+@Brief: 图像灰度化，
+@Input:	彩色图像
+提取颜色
+是否采用hsv空间模式
+@Return: 灰度图像
 
-   /*
-    *	@Brief: 坐标转换
-    *	@Input: 坐标向量
-    */
-	void CoordinateTransform(std::vector<cv::Point2f> &points);
+##void CoordinateTransform(std::vector<cv::Point2f> &points);
+@Brief: 坐标转换
+@Input: 坐标向量
 
-	/*
-     *	@Brief: 坐标转换测试，通过透视变换图像对比
-     *	@Input: 转换图像
-	 *          坐标点    
-     */
-	void CoordinateTransformTest(cv::Mat src_img,cv::Point2f point);
-
-	/*
-     *	@Brief: 图像处理主函数
-     *	@Input: 输入图像
-     *  @Return: 目标在真实场地的坐标
-     */
-	std::vector<cv::Point2f> ImageProcessing(cv::Mat src_img);
+##void CoordinateTransformTest(cv::Mat src_img,cv::Point2f point);
+@Brief: 坐标转换测试，通过透视变换图像对比
+@Input: 转换图像
+        输入坐标点    
+##std::vector<cv::Point2f> ImageProcessing(cv::Mat src_img);
+@Brief: 图像处理主函数
+@Input: 输入图像
+@Return: 目标在真实场地的坐标
